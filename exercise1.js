@@ -125,12 +125,27 @@ var myCar = {
 
 
 
+
+
+
 /************************************************************* */
 // Problem 6:
 // Write a JavaScript function with a loop that will iterate from 0 to 15. Each iteration, the for loop will check if the current number is odd or even and display the output.
 
 
 //your code...
+
+function oddOrEven() {
+    for (var i = 0; i < 16; i++) {
+        if (i % 2 === 0) { // If there is no remainder when divided by 2, number is even.
+            console.log(i + ' is even.');
+        }
+        else {              // If there IS a remainder when divided by 2, the number is odd.
+            console.log(i + ' is odd.');
+        }
+    }
+}
+
 
 
 
