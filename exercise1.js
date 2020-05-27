@@ -7,6 +7,19 @@
 
 //your code...
 
+var currentTemp;
+
+// Part 1:
+function farenheitToCelsius() {  // Part 1:
+    currentTemp = (currentTemp - 32) * (5/9);
+    console.log('The current temp in Celsius is', currentTemp + '.');
+}
+
+// Part 2:
+function celsiusToFarenheit() {  //Part 2:
+    currentTemp = (currentTemp * (9/5)) + 32;
+    console.log('The current temp in Farenheit is', currentTemp + '.');
+}
 
 
 
