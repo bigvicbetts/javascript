@@ -204,14 +204,53 @@ for (var i = 0; i < 11; i += 3) {
 
 
 
+
+
+
+
+
+
 // Problem 9:
 const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {school : 'TEKcamp'} ];
 //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
+
+var school = Object.values((foodArray[foodArray.length - 1]))[0];
+console.log(school);
+
 
 const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','amazing'];
 // Using both nameArray and adjectiveArray, make a
 // "for" loop that console.log()'s a sentence for each
 // corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  "Potatoes are salty", "Lemon is sour".
+
+var verb;
+for (i = 0; i < foodArray.length; i++) { 
+    var food; 
+    if (typeof foodArray[i] === 'string') {  // If the element in foodArray is a string,
+        food = foodArray[i];                 // assign that string to variable food (to 
+    }                                        // be printed to console later
+    else {
+        food = Object.values(foodArray[i])[0]; // Otherwise, assgin the first value in the 
+    }                                        // object element to variable food.
+
+    if (food[food.length - 1] === 's') { //If the 'food' variable ends in letter 's' (i.e. is plural),
+        verb = 'are';                    //the appropriate verb 'are' is assigned to the variable 'verb'.
+    }
+    else {                               //Otherwise (i.e. if food is singular),
+        verb = 'is';                     //the appropriate verb 'is' is assigned to the variable 'verb'.
+    }
+
+    //For each item in foodArray, that item is combined with the appropriate verb and
+    //the associated item in adjectiveArray and printed to the console.
+    console.log(food, verb, adjectiveArray[i]);
+}
+
+
+
+
+
+
+
 
 /************************************************************* */
 // Bonus Assignment: Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly does one of the 4 operations whenever it is run.  the doMath() function should print out what mathetmatical function was carried out.  The doMath() function should return the computed value of any operation performed.
