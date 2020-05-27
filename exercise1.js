@@ -150,11 +150,39 @@ function oddOrEven() {
 
 
 
+
+
+
+
 /************************************************************* */
 // Problem 7:
 // Write a JavaScript function that iterates the integers from 1 to 100. For multiples of 3 print "TEK" instead of the number and for multiples of 5, print "camp." For numbers that are multiples of both 3 and 5, print "TEKcamp."
 
 //your code...
+
+function tekCamp() {
+    var str;
+
+    for (var i = 1; i < 101; i++) { // Iterates over a list from 1 - 100
+        str = ''                // Creates empty string to populate and print to console 
+        if (i % 3 !== 0 && i % 5 !== 0) {
+            str = i;            // If number is not divisible by 3 or 5, assign number to
+        }                       // to the variable 'str'
+        else {
+            if (i % 3 === 0) {  // If number IS divisible by 3...
+                str += 'TEK';   //add 'TEK' to variable 'str'
+            }
+            if (i %5 === 0) {   // If number IS divisible by 5...
+                str += 'camp'   // add 'camp' to variable 'str'
+            }
+        }
+        console.log(str);       //At the end of each iteration, print value of 'str' to console.
+    }
+}
+
+
+
+
 
 
 /************************************************************* */
