@@ -64,6 +64,31 @@ console.log(num);
 // undefined
 // ""
 
+let val = 20;
+console.log(`${val} is truthy because any number that is not 0 or -0 is true.`);
+val = 0;
+console.log(`${val} is falsy because any number that is 0 or -0 is false.`);
+val = "'zero'";
+console.log(`${val} is truthy because any non-empty string is true.`);
+const zero = 20;
+console.log(`${zero} is truthy because any number (regardless of variable type) that is not 0 or -0 is true.`);
+val = null;
+console.log(`${val} is falsy because it is the absence of any value.`);
+val = "'0'";
+console.log(`${val} is truthy because it is non-empty a string.`);
+val = '!""';
+console.log(`${val} is truthy because the ! negates the empty string.`);
+val = '{}';
+console.log(`${val} is truthy because Objects (even empty ones) are true.`);
+val = '() => {console.log("hello TEKcamp!")};';
+console.log(`${val} is truthy because functions are always true.`);
+val = 125;
+console.log(`${val} is truthy because any number that is not 0 or -0 is true.`);
+val = undefined;
+console.log(`${val} is falsy because it has not been initialized.`);
+val = '""';
+console.log(`${val} is falsy because empty strings are always false.`);
+
 
 
 
@@ -183,7 +208,23 @@ var victor = {
 
 //your code...
 
+let footballTeam = {
+    name: 'Cowboys',
+    location: 'Dallas',
+    players: 53,
+    supberbowls: 5,
+    owner: 'Jerry Jones',
+    toString: function() {
+        return 'The ' + this.location + ' ' + this.name + ' are owned by ' + this.owner + ' and have ' + this.supberbowls + ' Super Bowl victories.';
+    },
+    winSuperBowl: function() {
+        this.supberbowls ++;
+    }
+}
 
+console.log(footballTeam.toString());
+footballTeam.winSuperBowl();
+console.log(footballTeam.toString());
 
 /************************************************************* */
 //Problem 8: create a function that outputs your 3 favorite data types, with a message explaining why you like that data type.
@@ -210,14 +251,22 @@ getDataTypes();
 /************************************************************* */
 //Bonus assignments:
 
-//1. Create a Higher Order Function called multiple(x) that takes a single parameter.  This HOF should return another function fn(y) that takes another single parameter y.  This inner function should compute the product of it's parameter with the parameter passed into multiple.  Use this returned "first-class" function to compute triples of any given number.
+// 1. Create a Higher Order Function called multiple(x) that takes a single parameter.
+// This HOF should return another function fn(y) that takes another single parameter y.
+// This inner function should compute the product of it's parameter with the parameter passed
+// into multiple.  Use this returned "first-class" function to compute triples of any given number.
 
-//your code...
+// your code...
 
 
-// 2. Write an outer function called stockGain that has cost basis (basis) as a parameter; declare a variable called message that holds " is how much the stock has increased".  Return an inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%. Console log your calculation.
+// 2. Write an outer function called stockGain that has cost basis (basis) as a parameter;
+// declare a variable called message that holds " is how much the stock has increased".  Return an
+// inner function with years (yrs) as a parameter and declare a variable for growth rate (r) of 5%.
+// Console log your calculation.
 
-// Once finished, declare a variable called futureValue that holds your stockGain function and enter any amount for the cost basis and a number for the number of years.  Run the function returned by the higher order function to display the future value of the stock.  
+// Once finished, declare a variable called futureValue that holds your stockGain function and
+// enter any amount for the cost basis and a number for the number of years.  Run the function
+// returned by the higher order function to display the future value of the stock.  
 
 //your code...
 
