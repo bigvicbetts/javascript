@@ -25,11 +25,26 @@ function celsiusToFarenheit() {  //Part 2:
 
 
 
+
+
+
+
 /************************************************************* */
 // Problem 2:
 // Write a JavaScript function to determine if someone is old enough to vote. Declare a variable for age and write a conditional statement for whether that age is old enough to vote. Console log "yes" or "no"
 
 //your code...
+
+var age;
+
+function canVote() {
+    if (age > 17) {
+        console.log("Yes");
+    }
+    else {
+        console.group("No");
+    }
+}
 
 
 
