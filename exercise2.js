@@ -179,16 +179,31 @@ var victor = {
 
 
 /************************************************************* */
-// Problem 6: Create an object literal that represents any object in the real world that you like.  Try to come up with a realistic set of properties and methods that would accurately describe that object.  In at least one of your methods, use the this keyword to refer back to one of the properties you defined on this object literal.  
+// Problem 7: Create an object literal that represents any object in the real world that you like.  Try to come up with a realistic set of properties and methods that would accurately describe that object.  In at least one of your methods, use the this keyword to refer back to one of the properties you defined on this object literal.  
 
 //your code...
 
 
 
 /************************************************************* */
-//Problem 7: create a function that outputs your 3 favorite data types, with a message explaining why you like that data type.
+//Problem 8: create a function that outputs your 3 favorite data types, with a message explaining why you like that data type.
 
 //your code...
+var dataTypes = {
+    'tree structures': 'they are heirarchical',
+    'booleans': 'they are simple yet powerful',
+    'integers': 'they are primitive yet fundamental for programming'
+}
+
+function getDataTypes() {
+    var key = Object.keys(dataTypes);
+    for (i = 0; i < key.length; i++ ) {
+        console.log('I like ' + key[i] + ' because ' + dataTypes[key[i]]);
+    }
+}
+
+getDataTypes();
+
 
 
 
