@@ -52,11 +52,31 @@ function canVote() {
 
 
 
+
+
+
 /************************************************************* */
 // Problem 3:
 // Write a JavaScript function that converts a string to an array. Declare a string variable with "The five boxing wizards jump quickly." Use the split() method to turn the string into an array of strings. (Be sure you separate the string into words, not characters.) After you have finished, use the join() method to change the array back into a string.
 
 //your code...
+
+var str = 'The five boxing wizards jump quickly.'
+var words;
+var newString;
+
+function splitWords() {
+    words = str.split(' ');
+    newString = words.join(' ');
+}
+
+
+
+
+
+
+
+
 
 
 
