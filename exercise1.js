@@ -6,7 +6,6 @@
 // Part 2: Write another funciton that converts the Celsius temperature back to Fahrenheit. 
 
 //your code...
-console.log('\nProblem 1:');
 var currentTemp;
 
 // Part 1:
@@ -21,9 +20,7 @@ function celsiusToFarenheit() {  //Part 2:
     console.log('The current temp in Farenheit is', currentTemp + '.');
 }
 
-currentTemp = 212;
-farenheitToCelsius();
-celsiusToFarenheit();
+
 
 
 
@@ -37,7 +34,7 @@ celsiusToFarenheit();
 // Write a JavaScript function to determine if someone is old enough to vote. Declare a variable for age and write a conditional statement for whether that age is old enough to vote. Console log "yes" or "no"
 
 //your code...
-console.log('\nProblem 2:');
+
 var age;
 
 function canVote() {
@@ -49,10 +46,7 @@ function canVote() {
     }
 }
 
-age = 17;
-canVote();
-age = 19;
-canVote();
+
 
 
 
@@ -66,7 +60,6 @@ canVote();
 // Write a JavaScript function that converts a string to an array. Declare a string variable with "The five boxing wizards jump quickly." Use the split() method to turn the string into an array of strings. (Be sure you separate the string into words, not characters.) After you have finished, use the join() method to change the array back into a string.
 
 //your code...
-console.log('\nProblem 3:');
 
 var str = 'The five boxing wizards jump quickly.'
 var words;
@@ -77,9 +70,7 @@ function splitWords() {
     newString = words.join(' ');
 }
 
-splitWords();
-console.log(words);
-console.log(newString);
+
 
 
 
@@ -93,7 +84,6 @@ console.log(newString);
 // Write a JavaScript function with a function that reverses your telephone number. Use the split() and join() methods from the previous problem as well as the toString() method to convert a number into a string and reverse() method to reverse an array in place.
 
 //your code...
-console.log('\nProblem 4:');
 
 var phoneNumber;
 var numberArray;
@@ -106,10 +96,7 @@ function reversePhoneNumber() {
     backwardsNumber = numberArray.join('');
 }
 
-phoneNumber = 8675309;
-reversePhoneNumber();
-console.log(numberArray);
-console.log(backwardsNumber);
+
 
 
 
@@ -122,7 +109,6 @@ console.log(backwardsNumber);
 // Write a JavaScript function creates a car object using information about your car. Include the make, model, year, and color. Write a function to get the year, color, make, and model in that order.
 
 //your code...
-console.log('\nProblem 5:');
 
 var myCar = {
     make: 'Nissan',
@@ -136,7 +122,7 @@ var myCar = {
 
 }
 
-console.log(myCar.getInfo());
+
 
 
 
@@ -149,7 +135,6 @@ console.log(myCar.getInfo());
 
 
 //your code...
-console.log('\nProblem 6:');
 
 function oddOrEven() {
     for (var i = 0; i < 16; i++) {
@@ -162,7 +147,7 @@ function oddOrEven() {
     }
 }
 
-oddOrEven();
+
 
 
 
@@ -175,7 +160,6 @@ oddOrEven();
 // Write a JavaScript function that iterates the integers from 1 to 100. For multiples of 3 print "TEK" instead of the number and for multiples of 5, print "camp." For numbers that are multiples of both 3 and 5, print "TEKcamp."
 
 //your code...
-console.log('\nProblem 7:');
 
 function tekCamp() {
     var str;
@@ -197,7 +181,6 @@ function tekCamp() {
     }
 }
 
-tekCamp();
 
 
 
@@ -210,7 +193,6 @@ const nums = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 // and 9: the zeroth, third, sixth, and ninth values.
 
 //your code...
-console.log('\nProblem 8:');
 
 for (var i = 0; i < 11; i += 3) {
     console.log(nums[i]);
@@ -229,7 +211,6 @@ for (var i = 0; i < 11; i += 3) {
 
 
 // Problem 9:
-console.log('\nProblem 9:');
 const foodArray = [ 'potatoes', 'tamales', 'lemon','strawberries','chocolate', 'pudding', {school : 'TEKcamp'} ];
 //access the value of the last element of the array and set it to a variable called school.  print the school variable to the console.
 
@@ -242,15 +223,12 @@ const adjectiveArray = [ 'salty', 'spicy', 'sour', 'sweet', 'rich','creamy','ama
 // "for" loop that console.log()'s a sentence for each
 // corresponding value in the arrays. Add the word "is" or "are" depending on if the food is singular or plural.  "Potatoes are salty", "Lemon is sour".
 
+
 var verb;
 for (i = 0; i < foodArray.length; i++) { 
-    var food; 
-    if (typeof foodArray[i] === 'string') {  // If the element in foodArray is a string,
-        food = foodArray[i];                 // assign that string to variable food (to 
-    }                                        // be printed to console later
-    else {
-        food = Object.values(foodArray[i])[0]; // Otherwise, assgin the first value in the 
-    }                                        // object element to variable food.
+    var food;                             
+    food = Object.values(foodArray[i]).join(''); 
+                                   
 
     if (food[food.length - 1] === 's') { //If the 'food' variable ends in letter 's' (i.e. is plural),
         verb = 'are';                    //the appropriate verb 'are' is assigned to the variable 'verb'.
@@ -273,7 +251,7 @@ for (i = 0; i < foodArray.length; i++) {
 
 /************************************************************* */
 // Bonus Assignment: Create 4 mathematical function expressions, add,subtract,multiply,divide.  put them in an array, and create a doMath() function that randomly does one of the 4 operations whenever it is run.  the doMath() function should print out what mathetmatical function was carried out.  The doMath() function should return the computed value of any operation performed.
-console.log('\nBonus Problem:');
+
 
 const operations = [];
 
@@ -314,9 +292,3 @@ function doMath(num1, num2) {
                                                                   //operations array - 1)
     return operations[random](num1, num2);
 };
-
-console.log(doMath(6, 3));
-console.log(doMath(6, 3));
-console.log(doMath(6, 3));
-console.log(doMath(6, 3));
-
