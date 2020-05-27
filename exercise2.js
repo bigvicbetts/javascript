@@ -201,7 +201,8 @@ var victor = {
     }
 }
 
-
+victor.learn();
+victor.enjoy();
 
 /************************************************************* */
 // Problem 7: Create an object literal that represents any object in the real world that you like.  Try to come up with a realistic set of properties and methods that would accurately describe that object.  In at least one of your methods, use the this keyword to refer back to one of the properties you defined on this object literal.  
@@ -225,6 +226,7 @@ let footballTeam = {
 console.log(footballTeam.toString());
 footballTeam.winSuperBowl();
 console.log(footballTeam.toString());
+
 
 /************************************************************* */
 //Problem 8: create a function that outputs your 3 favorite data types, with a message explaining why you like that data type.
@@ -258,6 +260,18 @@ getDataTypes();
 
 // your code...
 
+let multiple = function(x) {
+    let fn = function(y) {
+        y = 3; // Per the last sentence in instructions, this will change the "first-class" function
+        return x * y;  // to compute TRIPLES of any number passed into the Higher Order Function.
+    }
+    return fn;
+}
+
+
+
+console.log(multiple(3)(1));
+
 
 // 2. Write an outer function called stockGain that has cost basis (basis) as a parameter;
 // declare a variable called message that holds " is how much the stock has increased".  Return an
@@ -270,4 +284,17 @@ getDataTypes();
 
 //your code...
 
+let stockGain = function(basis) {
+    let message = ' is how much the stock has increased.';
+    let years = function(yrs) {
+        r = 1.05;
+        newBasis = basis;
+        for (i = 0; i < yrs; i++) {
+            newBasis = newBasis * r;
+        }
+        console.log(newBasis + message);
+    }
+    return years;
+}
 
+futureValue = stockGain(100)(2);
