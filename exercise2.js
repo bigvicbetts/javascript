@@ -128,6 +128,20 @@ if (age > 65) console.log("retired"); else {
 }
 
 
+// your code...
+
+var result = (age > 21) ? "adult" : "minor";
+console.log(result);
+
+result = (age > 13 && age < 19) ? "teen" : "not a teenager";
+console.log(result);
+
+result = (age > 65) ? "retired" : "still working...";
+console.log(result);
+
+
+
+
 /************************************************************* */
 // Problem 6: Create an object literal that represents yourself.  set it to a variable that appropriately describes the object.  Include the following properties:
 /*
