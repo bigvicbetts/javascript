@@ -194,6 +194,14 @@ const nums = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 
 //your code...
 
+for (var i = 0; i < 11; i += 3) {
+    console.log(nums[i]);
+}
+
+
+
+
+
 
 
 // Problem 9:
