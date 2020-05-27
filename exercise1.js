@@ -79,16 +79,25 @@ function splitWords() {
 
 
 
-
-
-
-
-
 /************************************************************* */
 // Problem 4:
 // Write a JavaScript function with a function that reverses your telephone number. Use the split() and join() methods from the previous problem as well as the toString() method to convert a number into a string and reverse() method to reverse an array in place.
 
 //your code...
+
+var phoneNumber;
+var numberArray;
+var backwardsNumber;
+
+function reversePhoneNumber() {
+    phoneNumber = phoneNumber.toString();
+    numberArray = phoneNumber.split('');
+    numberArray.reverse();
+    backwardsNumber = numberArray.join('');
+}
+
+
+
 
 
 
