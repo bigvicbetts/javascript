@@ -11,7 +11,11 @@ for(let i=0; i<10; i++) {
 
 //your code...
 
-
+var i = 0;
+while (i < 10) {
+    console.log(" the value of i in the loop is : " + i);
+    i++;
+}
 
 
 /************************************************************* */
@@ -20,6 +24,27 @@ for(let i=0; i<10; i++) {
 //use javascript to compute the value of the above statement. Each individual operation needs to be a function expression. run all the functions after defining them, and print the answer to the console.
 
 //your code...
+
+var multiply = function(num1, num2) {
+    return num1 * num2;
+}
+
+var add = function(num1, num2) {
+    return num1 + num2;
+}
+
+var divide = function(num1, num2) {
+    return num1 / num2;
+}
+
+var squared = function(num) {
+    return num * num;
+}
+
+num = add(30, 2);
+num = multiply(num, 20);
+num = divide(num, squared(10));
+console.log(num);
 
 
 /************************************************************* */
