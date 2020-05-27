@@ -109,6 +109,17 @@ function reversePhoneNumber() {
 
 //your code...
 
+var myCar = {
+    make: 'Nissan',
+    model: 'Pathfinder',
+    year: 2008,
+    color: 'blue',
+
+    getInfo: function() {
+        return this.year + ' ' + this.color + ' ' + this.make + ' ' + this.model;
+    }
+
+}
 
 
 
