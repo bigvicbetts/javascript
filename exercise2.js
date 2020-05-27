@@ -159,6 +159,24 @@ console.log(result);
 
 //your code...
 
+var victor = {
+    name: "Victor",
+    age: 38,
+    gender: "male",
+    hobbies: ["programming", "chess", "soccer", "reading"],
+    profession: "Aspiring software developer",
+    education: "Some college",
+    learn: function() {
+        console.log(this.name);
+    },
+    enjoy: function() {
+        for (var i = 0; i < this.hobbies.length; i++) {
+            console.log("I enjoy " + this.hobbies[i]);
+        }
+    }
+}
+
+
 
 /************************************************************* */
 // Problem 6: Create an object literal that represents any object in the real world that you like.  Try to come up with a realistic set of properties and methods that would accurately describe that object.  In at least one of your methods, use the this keyword to refer back to one of the properties you defined on this object literal.  
