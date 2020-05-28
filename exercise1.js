@@ -288,7 +288,7 @@ Math.floor((Math.random() * operations.length));
 
 function doMath(num1, num2) {
     var random = Math.floor((Math.random() * operations.length)); // Generates random number 
-                                                                  //between 0 and (length of 
-                                                                  //operations array - 1)
+                                                                  // between 0 and (length of 
+                                                                  // operations array - 1)
     return operations[random](num1, num2);
 };

@@ -263,7 +263,8 @@ getDataTypes();
 let multiple = function(x) {
     let fn = function(y) {
         y = 3; // Per the last sentence in instructions, this will change the "first-class" function
-        return x * y;  // to compute TRIPLES of any number passed into the Higher Order Function.
+        return x * y;  // to compute TRIPLES of any number passed into the Higher Order Function
+                       // (regardless of the argument passed to fn)
     }
     return fn;
 }
@@ -292,7 +293,8 @@ let stockGain = function(basis) {
         for (i = 0; i < yrs; i++) {
             newBasis = newBasis * r;
         }
-        console.log(newBasis + message);
+        let growth = newBasis - basis; // Subtracts initial value from final value to show growth
+        console.log(growth + message);
     }
     return years;
 }
