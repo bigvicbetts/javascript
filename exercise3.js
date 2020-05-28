@@ -52,7 +52,18 @@ console.log(cool);
 
 //your code...
 
+let squaredArray = function() {
+    let nums = [];
+    let numsSquared = [];
+    for (i = 1; i < 6; i++) {
+        nums.push(i);
+        numsSquared.push(i * i);
+    }
+    return numsSquared;
+}
 
+
+console.log(squaredArray());
 
 
 
