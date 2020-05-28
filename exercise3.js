@@ -10,7 +10,17 @@
 
 //your code...
 
+let isEmpty = function(str) {
+    if(str.length === 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
 
+console.log(isEmpty('string'));
+console.log(isEmpty(''));
 
 
 
@@ -24,7 +34,12 @@
 
 //your code...
 
-
+let fun = 'Learning JavaScript is fun!';  // Initial string
+wordArray = fun.split(' ');      // Split string into array wherever there's a space
+let newWord = 'cool!';          // Create a replacement word
+wordArray[wordArray.length - 1] = newWord;  // Assign replacement word to the last element in array
+let cool = wordArray.join(' ');  // Join elements of array back into string with space between each element
+console.log(cool);
 
 
 /************************************************************* */
