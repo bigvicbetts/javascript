@@ -52,7 +52,7 @@ console.log(cool);
 
 //your code...
 
-let squaredArray = function() {
+squaredArray = () => {
     let nums = [];
     let numsSquared = [];
     for (i = 1; i < 6; i++) {
@@ -78,6 +78,21 @@ console.log(squaredArray());
 
 //your code...
 
+nums = [1, 3, 5, 7, 9, 1, 3, 5];
+
+greaterThanThree = () => {
+    newNums = [];
+    for (i in nums) {
+        if (nums[i] > 3) {
+            newNums.push(nums[i]);
+        }
+    }
+    return newNums;
+}
+
+console.log(greaterThanThree());
+
+
 
 
 
@@ -92,9 +107,17 @@ console.log(squaredArray());
 
 //your code...
 
+let numArray = [1, 2, 3, 4, 5];
 
+sumOfArray = (num) => {
+    let sum = 0;
+    while (num.length > 0) {
+        sum += numArray.pop();
+    }
+    return sum;
+}
 
-
+console.log(sumOfArray(numArray));
 
 
 /************************************************************* */
