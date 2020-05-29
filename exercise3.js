@@ -240,24 +240,41 @@ sortNums(numbers);
 
 /************************************************************* */
 // Problem 8:
-//add an example of at least 5 JavaScript data types to the given mapObj.  The key is the example 
-// data type, and the value is the name of the data type.  An object data type has already been 
-// set as the 1st key / val pair.
+// add an example of at least 5 JavaScript data types to the given mapObj.  The
+// key is the example data type, and the value is the name of the data type.
+// An object data type has already been  set as the 1st key / val pair.
 
+const myObject = {company : "TEKsystems"}
 const mapObj = new Map();
-mapObj.set({company : "TEKsystems"},"object");
-
-
+mapObj.set(myObject,"object");
+mapObj.set(1, "number");
+mapObj.set([1, 2], "array");
+mapObj.set('Hello TEKcamp', "string");
+mapObj.set(true, "boolean");
+mapObj.set(null, "null" )
+ 
 console.log(mapObj.has({company : "TEKsystems"}));  
 // The above console.log() statmeent returns false.  Write another console.log() statement 
 // explaining why this line of code prints false.  Refactor the code on line 106, so you can 
 // successfully check to see if {company : "TEKsystems"} exists in the mapObj.
 
 // your code...
-
-// loop through the mapObj and create a new array of only the data types, leaving out the example 
-// keys of the mapObj.  Use array methods to do this.  
+console.log("The above code returns as false because the map cannot see inside the object");
+console.log("I solved this by creating an external object that contains the same");
+console.log("information.  It returns as true in the .has test.  See below");
+console.log(mapObj.has(myObject));  
+// loop through the mapObj and create a new array of only the data types, leaving out the
+// example keys of the mapObj.  Use array methods to do this.  
 // Example output : ['string',number','boolean',array','object']
+
+function loopThrough(obj) {
+
+    const dataTypes = []
+    mapObj.forEach((key, value) => dataTypes.push(key));
+    return dataTypes;
+}
+
+console.log(loopThrough(mapObj));
 
 
 /************************************************************* */
