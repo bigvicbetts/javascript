@@ -316,3 +316,14 @@ console.log(performer(cb));
 // Bonus assignment:
 // research a new feature of ES6+ and create an example of it's use case here.
 // Be sure to write comments explaining what the feature is and why it is useful.
+
+
+// The template structure (or string interpolation) is a very useful tool that 
+// came in ES6+.  It allows you to easily insert variables into a string of text.
+// Many other languages have similar features (printf in Java) so it definitely 
+// makes Javascript easier to handle.
+
+const name = 'Victor Betts';
+const age = 38;
+const gender = 'male';
+console.log(`Hi.  My name is ${name} and I am a ${age} ${gender}.`);
