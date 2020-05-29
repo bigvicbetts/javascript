@@ -82,12 +82,10 @@ nums = [1, 3, 5, 7, 9, 1, 3, 5];
 
 greaterThanThree = () => {
     newNums = [];
-    for (i in nums) {
-        if (nums[i] > 3) {
-            newNums.push(nums[i]);
-        }
+    myFunc = (num) => {
+        return num > 3
     }
-    return newNums;
+    return nums.filter(myFunc);
 }
 
 console.log(greaterThanThree());
@@ -107,14 +105,13 @@ console.log(greaterThanThree());
 
 //your code...
 
-let numArray = [1, 2, 3, 4, 5];
+let numArray = [1, 1, 1, 1, 1, 1];
 
 sumOfArray = (num) => {
-    let sum = 0;
-    while (num.length > 0) {
-        sum += numArray.pop();
+    reduction = (total, num) => {
+        return total + num;
     }
-    return sum;
+    return num.reduce(reduction);
 }
 
 console.log(sumOfArray(numArray));
@@ -132,6 +129,28 @@ console.log(sumOfArray(numArray));
 
 //your code...
 
+let DNA = 'GCTA';
+
+const matchingStrand = function(str) {
+    const pair1 = ['G', 'A'];
+    const pair2 = ['C', 'T'];
+    let match = [];
+    for (i = 0; i < str.length; i++) { // For each letter in str...
+        for (j = 0; j < pair1.length; j++) { // Compare to each letter in...
+            if (str[i] === pair1[j]) { // pair 1 array.  If it matches...
+                match.push(pair2[j]);  // add the corresponding value in pair 2
+            }                          // array to match.  Otherwise...
+            else if (str[i] === pair2[j]) { // if the letter matches a letter in pair 2 array,
+                match.push(pair1[j]); // add the corresponding value in pair 1 array to match.
+            }
+        }
+    }
+    return match;
+}
+
+
+console.log(matchingStrand(DNA));
+
 
 
 
@@ -145,17 +164,77 @@ console.log(sumOfArray(numArray));
 //("one" => 1) ("1" => 1).  Use array methods to perform this task.  
 const numbers = [2,23,1,2,1,1,1,2,2.5,20,200,2000,,{k:1},20000,19999,1878,140,23,4,"sk",true,true,"true-dat","nice","one","two","three","3","tea",[]];
 
+
+
 function maxNumber(numbers) {
     //your code...
+
+
+    for (i = 0; i < numbers.length; i++) {  // This for loop eliminates the empty space in array
+        if (typeof (numbers[i]) === 'undefined') {
+            numbers.splice(i, 1);
+        }
+    }
+    let max = 0;
+    const words = {
+        'one' : 1,
+        'two' : 2,
+        'three' : 3,
+        'four' : 4,
+        'five' : 5,
+    }
+    
+    for (i = 0; i < numbers.length; i++) {
+        if (numbers[i] in words) {
+            numbers.splice(i, 1, (words[numbers[i]]));
+        }
+    }
+
+    for (i = 0; i < numbers.length; i++) {
+        if (typeof numbers[i] === 'object') {
+            numbers.splice(i, 1, Object.values(numbers[i])[0]);
+        }
+    }
+
+    for (i = 0; i < numbers.length; i++) {
+        if (typeof (numbers[i] === 'string')) {
+            numbers.splice(i, 1, +numbers[i]);
+        }
+    }
+
+    numbers.sort();
+    numbers.splice(25);
+
+    max = Math.max(...numbers);
+
+    return max;
+   
 }
 
+console.log(maxNumber(numbers));
 // 7.b -Write a function that sorts the given numbers array.  Allow the function to sort the 
 // array in descending order
 
 function sortNums(numbers,desc=false) {
     //your code...
+
+    newArray = []
+    let sortDescending = function(initial, next) {
+        if (initial > next) {
+            return -1;
+        }
+        else if (initial < next) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
+    newArray = numbers.sort(sortDescending);
+    console.log(newArray);
 };
 
+sortNums(numbers);
 
 
 
@@ -182,23 +261,41 @@ console.log(mapObj.has({company : "TEKsystems"}));
 
 
 /************************************************************* */
-// Problem 11:
+// Problem 9:
 
 let ones = [1,11,111,1111,11111,111111,1111111,11111111,111111111,1111111111];
 // reverse the array, without modifying the ones array.
 
+let reverseOnes = function(arr) {
+    let newOnes = [];
+    for (i = ones.length - 1; i >= 0; i--) {
+        newOnes.push(ones[i]);
+    }
+    return newOnes;
+}
+
+console.log(reverseOnes(ones));
+
+
 
 /************************************************************* */
-// Problem 12:
+// Problem 10:
 // create a function called performer(cb) that takes in a callback function and runs that 
 // callback function.  It should return the output of the callback function.
 
 function performer(cb) {
     //code goes here
+    return cb()
 }
+
+function cb() {
+    return 'TEKcamp is AMAZING!';
+}
+
+console.log(performer(cb));
 
 
 /************************************************************* */
 // Bonus assignment:
-// research a new feature of ES6+ and create an example of it's use case here.  Be sure to write 
-// comments explaining what the feature is and why it is useful.
+// research a new feature of ES6+ and create an example of it's use case here.
+// Be sure to write comments explaining what the feature is and why it is useful.
